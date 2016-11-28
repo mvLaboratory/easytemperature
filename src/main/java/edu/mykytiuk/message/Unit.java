@@ -2,19 +2,18 @@ package edu.mykytiuk.message;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Arrays;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Unit {
     private String location;
-    private Measurement[] measurements;
+    private Measurement measurements;
     private Date timestamp;
 
     public Unit() {
     }
 
-    public Unit(String location, Measurement[] measurements, Date timestamp) {
+    public Unit(String location, Measurement measurements, Date timestamp) {
         this.location = location;
         this.measurements = measurements;
         this.timestamp = timestamp;
@@ -28,11 +27,11 @@ public class Unit {
         this.location = location;
     }
 
-    public Measurement[] getMeasurements() {
+    public Measurement getMeasurements() {
         return measurements;
     }
 
-    public void setMeasurements(Measurement[] measurements) {
+    public void setMeasurements(Measurement measurements) {
         this.measurements = measurements;
     }
 
@@ -48,7 +47,7 @@ public class Unit {
     public String toString() {
         return "Unit{" +
                 "location='" + location + '\'' +
-                ", measurements=" + Arrays.toString(measurements) +
+                ", measurements=" + measurements +
                 ", timestamp=" + timestamp +
                 '}';
     }

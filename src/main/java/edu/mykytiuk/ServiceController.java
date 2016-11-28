@@ -19,6 +19,7 @@ public class ServiceController {
     @RequestMapping("/")
     public Unit showUnit(){
         RestTemplate temp = new RestTemplate();
+        SSLCertificateValidation.disable();
         return temp.getForObject(apiURL, Unit.class);
     }
 }

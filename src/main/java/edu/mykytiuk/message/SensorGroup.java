@@ -6,24 +6,24 @@ import java.util.Arrays;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SensorGroup {
-    private Long id;
+    private String id;
     private String type;
     private Sensor[] sensors;
 
     public SensorGroup() {
     }
 
-    public SensorGroup(Long id, String type, Sensor[] sensors) {
+    public SensorGroup(String id, String type, Sensor[] sensors) {
         this.id = id;
         this.type = type;
         this.sensors = sensors;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

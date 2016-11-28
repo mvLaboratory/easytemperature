@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sensor {
-    private Long id;
+    private String id;
     private String type;
     private String unit;
     private String outdoors;
@@ -16,7 +16,7 @@ public class Sensor {
     public Sensor() {
     }
 
-    public Sensor(Long id, String type, String unit, String outdoors, String balcony, Reading[] readings) {
+    public Sensor(String id, String type, String unit, String outdoors, String balcony, Reading[] readings) {
         this.id = id;
         this.type = type;
         this.unit = unit;
@@ -25,12 +25,12 @@ public class Sensor {
         this.readings = readings;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getType() {
