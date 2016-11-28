@@ -36,6 +36,10 @@ public class SensorGroup {
     }
 
     public Sensor[] getSensors() {
+        if (sensors == null) {
+            Sensor[] temp = new Sensor[0];
+            return temp;
+        }
         return sensors;
     }
 

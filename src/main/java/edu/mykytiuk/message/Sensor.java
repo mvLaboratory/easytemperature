@@ -66,6 +66,10 @@ public class Sensor {
     }
 
     public Reading[] getReadings() {
+        if (readings == null) {
+            Reading[] temp = new Reading[0];
+            return temp;
+        }
         return readings;
     }
 

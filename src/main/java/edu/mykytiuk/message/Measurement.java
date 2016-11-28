@@ -20,6 +20,10 @@ public class Measurement {
     }
 
     public SensorGroup[] getSensors() {
+        if (sensors == null) {
+            SensorGroup[] temp = new SensorGroup[0];
+            return temp;
+        }
         return sensors;
     }
 
