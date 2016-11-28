@@ -2,7 +2,10 @@ package edu.mykytiuk.message;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sensor {
@@ -11,12 +14,12 @@ public class Sensor {
     private String unit;
     private String outdoors;
     private String balcony;
-    private Reading[] readings;
+    private List<Reading> readings;
 
     public Sensor() {
     }
 
-    public Sensor(String id, String type, String unit, String outdoors, String balcony, Reading[] readings) {
+    public Sensor(String id, String type, String unit, String outdoors, String balcony, List<Reading> readings) {
         this.id = id;
         this.type = type;
         this.unit = unit;
@@ -65,15 +68,15 @@ public class Sensor {
         this.balcony = balcony;
     }
 
-    public Reading[] getReadings() {
+    public List<Reading> getReadings() {
         if (readings == null) {
-            Reading[] temp = new Reading[0];
+            List<Reading> temp = new ArrayList<>();
             return temp;
         }
         return readings;
     }
 
-    public void setReadings(Reading[] readings) {
+    public void setReadings(List<Reading> readings) {
         this.readings = readings;
     }
 
@@ -85,7 +88,7 @@ public class Sensor {
                 ", unit='" + unit + '\'' +
                 ", outdoors='" + outdoors + '\'' +
                 ", balcony='" + balcony + '\'' +
-                ", readings=" + Arrays.toString(readings) +
+                ", readings=" + readings.toString() +
                 '}';
     }
 }
